@@ -1,1 +1,2 @@
-web: python manage.py migrate && python manage.py createsuperuser --noinput || true && gunicorn project.wsgi
+
+web: python manage.py migrate && gunicorn project.wsgi
