@@ -85,7 +85,7 @@ if os.environ.get('MYSQLHOST'):
             'USER': os.environ.get('MYSQLUSER'),
             'PASSWORD': os.environ.get('MYSQLPASSWORD'),
             'HOST': os.environ.get('MYSQLHOST'),
-            'PORT': '3306',
+            'PORT': os.environ.get('MYSQLPORT'),
         }
     }
 else:
@@ -95,7 +95,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
