@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-3">Students</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Age</th>
+            <th>Eligible for Vote</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for s in students %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.branch }}</td>
+            <td>{{ s.age }}</td>
+            <td>
+                {% if s.age < 18 %}
+                    <span class="badge bg-danger">No</span>
+                {% else %}
+                    <span class="badge bg-success">Yes</span>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
